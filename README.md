@@ -24,11 +24,11 @@ The project has a component (calendar) can be called and configured as explained
 * Decide which function to call when clicking on an event
 
 Follows an example of the component with the different parameter:
-```
+```html
 <app-calendar [eventsArray]="events" [calendarsArray]="calendars"
               [eventsUrl]="'https://supsi-events.herokuapp.com/bff/events'" [calendarsUrl]="'https://supsi-events.herokuapp.com/bff/calendars'"
               [research]="false" [views]="'week'" [onEventClick]="eventFunction"></app-calendar>
-```html
+```
 
 \appendix
 APPENDIX: REMOTE ENDPOINTS
