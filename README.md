@@ -37,7 +37,6 @@ Follows an example of the component with the different parameter:
 * * **[views]** &#8594 the views you want to have ('week'/'month'/'both') not using this parameter set automatically 'both'. The value has to be written as a string
 * * **[onEventClick]** &#8594 the function created that wants to be used when  clicking on an event
 
-\appendix
 APPENDIX: REMOTE ENDPOINTS
 * endpoint events list
   * https://supsi-events.herokuapp.com/bff/events
