@@ -29,6 +29,13 @@ Follows an example of the component with the different parameter:
               [eventsUrl]="'https://supsi-events.herokuapp.com/bff/events'" [calendarsUrl]="'https://supsi-events.herokuapp.com/bff/calendars'"
               [research]="false" [views]="'week'" [onEventClick]="eventFunction"></app-calendar>
 ```
+* **[eventsArray]** &#8594 the name of the events array you want to use
+* * **[calendarsArray]** &#8594 the name of the calendars array you want to use
+* * **[eventsUrl]** &#8594 the URL to get events. The value has to be written as a string
+* * **[calendarsUrl]** &#8594 the URL to get calendars. The value has to be written as a string
+* * **[research]** &#8594 choose if activate the research (true/false)
+* * **[views]** &#8594 the views you want to have ('week'/'month'/'both') not using this parameter set automatically 'both'. The value has to be written as a string
+* * **[onEventClick]** &#8594 the function created that wants to be used when  clicking on an event
 
 \appendix
 APPENDIX: REMOTE ENDPOINTS
