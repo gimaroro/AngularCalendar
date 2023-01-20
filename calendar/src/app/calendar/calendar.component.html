@@ -1,0 +1,11 @@
+<div class="main-content">
+  <div class="buttons">
+    <mat-button-toggle-group *ngIf="views == 'both'" [class]="'buttons'" name="fontStyle" aria-label="Font Style" value="month">
+      <mat-button-toggle (click)="changeCalendar(true)" value="month">Month</mat-button-toggle>
+      <mat-button-toggle (click)="changeCalendar(false)" value="week">Week</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <app-month [calendars]="calendars" [eventsMap]="eventsMap" [research]="research" [researchUrl]="researchUrl" [onEventClick]="onEventClick" *ngIf="month"></app-month>
+  <app-week [calendars]="calendars" [eventsMap]="eventsMap" [research]="research" [researchUrl]="researchUrl" [onEventClick]="onEventClick" *ngIf="!month"></app-week>
+</div>

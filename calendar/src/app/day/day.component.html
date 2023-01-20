@@ -1,0 +1,13 @@
+
+  <span class="day-number">{{day?.day}}</span>
+  <!-- TD -->
+  <div *ngIf="eventExists(day) != null">
+    <div class="event" *ngFor="let event of todayEvents" [style]="{'background': calendars.get(event.calendar)}" (click)="eventClick(event)">
+      <!-- Check to show only the selected calendar, only works on local array event and implemented only on month component -->
+      <!--<div *ngIf="calendarsCheck.get(event.calendar)">-->
+        <h5>{{event.title}}</h5>
+        <span class="description">{{event.description}}</span><br>
+        <span class="start-time">{{event.timeStart}} - {{event.timeEnd}}</span>
+      <!--</div>-->
+    </div>
+  </div>

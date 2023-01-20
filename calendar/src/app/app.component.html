@@ -1,0 +1,9 @@
+<script>
+</script>
+
+<h1 style="text-align:center; color: #A2B38B">{{title}}</h1>
+<app-calendar [views]="'both'" [eventsUrl]="'https://supsi-events.herokuapp.com/bff/events'" [calendarsUrl]="'https://supsi-events.herokuapp.com/bff/calendars'"></app-calendar>
+<app-calendar [eventsArray]="events" [calendarsArray]="calendars" [research]="false" [views]="'month'" [onEventClick]="eventFunction"></app-calendar>
+<app-calendar [eventsArray]="events" [calendarsArray]="calendars"
+              [eventsUrl]="'https://supsi-events.herokuapp.com/bff/events'" [calendarsUrl]="'https://supsi-events.herokuapp.com/bff/calendars'"
+              [research]="false" [views]="'week'" [onEventClick]="eventFunction"></app-calendar>

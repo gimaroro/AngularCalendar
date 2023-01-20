@@ -1,0 +1,13 @@
+.calendar-days{
+  font-size: 9px;
+}
+
+.day-number{
+  font-weight: bold;
+  color: green;
+}
+
+h5{
+  margin-top: 0;
+  margin-bottom: 0;
+}

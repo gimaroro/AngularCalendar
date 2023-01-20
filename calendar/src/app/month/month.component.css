@@ -1,0 +1,76 @@
+.today {
+  background: #4384f6;
+}
+
+.calendar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar tr, .calendar tbody {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+}
+
+.calendar td, .calendar th {
+
+	box-sizing:border-box;
+	border: 1px solid #999;
+}
+
+.calendar .weekdays {
+	background: #E6BA95;
+}
+
+.calendar .weekdays th {
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 20px;
+	border: none !important;
+	padding: 10px 6px;
+	color: #000;
+	font-size: 13px;
+}
+
+.calendar td {
+  display: flex;
+  flex-direction: column;
+}
+
+.day{
+  background: #FAFDD6;
+}
+
+.no-month-day {
+  background-color: rgba(125, 125, 125, 0.2);
+}
+
+.today {
+  background: #00FF8D50;
+}
+
+.checkboxs{
+  text-align: center;
+  margin: 5px;
+}
+
+.input-box{
+  margin-left: 50px;
+}
+
+.example-margin{
+  margin: 5px;
+}
+
+mat-sidenav-container{
+  position: absolute;
+  height: 100%;
+}
+
+mat-sidenav-content, mat-sidenav{
+  padding: 12px;
+  width: 200px;
+}

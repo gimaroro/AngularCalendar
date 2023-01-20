@@ -1,0 +1,55 @@
+<div class="flex-container flex-center-horz">
+  <div class="fa-duotone fa-arrow-left" (click)="previousWeek()"></div>
+  <div class="width-20"></div>
+  <div>{{firstDay.year}} {{firstDay.setLocale('en').toLocaleString({ month: 'long' })}}
+    <span *ngIf="lastDay.month != firstDay.month"> - {{lastDay.toLocaleString({ month: 'long' })}}</span>
+    <span *ngIf="lastDay.year != firstDay.year"> {{lastDay.year}}</span>
+  </div>
+  <div class="width-20"></div>
+  <div class="fa-duotone fa-arrow-right" (click)="nextWeek()"></div>
+</div>
+<div class="flex-container flex-center-horz">
+  <button mat-raised-button (click)="moveToToday()">Today</button>
+</div>
+
+<div class="checkboxs">
+  <mat-checkbox *ngFor="let calendar of calendars.keys()" id="{{calendar}}" class="example-margin" (change)="show()" checked>{{calendar}}</mat-checkbox>
+
+  <mat-form-field class="input-box" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input #searchInput matInput placeholder="Search..." value="" (keyup)="search()">
+  </mat-form-field>
+</div>
+
+<mat-sidenav-container style="visibility: hidden">
+  <mat-sidenav #sidenav>Events
+    <div class="event" *ngFor="let event of searchEvent$ | async" [style]="{'background': calendars.get(event.calendar)}">
+      <h5>{{event.title}}</h5>
+      <span class="description">{{event.description}}</span><br>
+      <span class="start-time">{{event.timeStart}} - {{event.timeEnd}}</span>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content style="visibility: visible">
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<div class='months'>
+  <table class="calendar">
+    <tr class="weekdays">
+      <th scope="col">Monday</th>
+      <th scope="col">Tuesday</th>
+      <th scope="col">Wednesday</th>
+      <th scope="col">Thursday</th>
+      <th scope="col">Friday</th>
+      <th scope="col">Saturday</th>
+      <th scope="col">Sunday</th>
+    </tr>
+
+    <tr>
+      <td class="day" [ngClass]="{'no-month-day': !day, 'today': todayCheck(day)}" *ngFor="let day of this.daysArr">
+        <app-day [day]="day" [events]="eventsMap" [calendars]="calendars" [onEventClick]="onEventClick"></app-day>
+      </td>
+    </tr>
+
+  </table>
+</div>
